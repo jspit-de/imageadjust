@@ -37,7 +37,7 @@
       $dstY = $scaling ? $y : $yCut;
     }
     
-    $dstImg = imagecreate($dstX,$dstY);
+    $dstImg = imagecreatetruecolor($dstX,$dstY);
     $imOk = imagecopyresampled($dstImg,$img,
       0,0,             //dst_x, dst_y
       $xstart,$ystart, // src_x, src_y
@@ -46,4 +46,3 @@
     );
     return $dstImg;  
   }
-
